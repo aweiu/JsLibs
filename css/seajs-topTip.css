@@ -1,0 +1,31 @@
+.top-tip {
+    font-size: 13px;
+    background: #fffeb8;
+    color: #333;
+    position: fixed;
+    left: 0px;
+    z-index: 999999999;
+    width: 100%;
+    text-indent: 15px;
+    -webkit-animation: top-tip-animation 6s;
+    -webkit-animation-iteration-count: 1;
+    height: 19px;
+    top: -19px;
+}
+@-webkit-keyframes top-tip-animation {
+    0% {
+        top: -19px;
+    }
+    25% {
+        top: 0px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: 0px;
+    }
+    100% {
+        top: -19px;
+    }
+}

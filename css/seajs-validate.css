@@ -1,0 +1,50 @@
+.tip-danger,.vtip-success{padding:5px 5px 5px 0;font-size:13px;border-radius:5px;background-color:#ffe6e6;border:1px solid #f9d8d8;color:#ff4545}.vtip-success{border-color:#cee2e3;color:#77c1c4;background-color:#e3f2f3}.tip-danger:before{height:15px;width:15px;border-radius:50%;display:inline-block;text-align:center;line-height:15px;color:#fff;content:"!";margin:0 5px;background-color:#ff6363}
+.vtip-pop,.vtip-pop-error{
+    position:absolute !important;
+    padding: 6px 23px 10px 20px !important;
+    color: #f94949 !important;
+    font-size: 18px !important;
+    left: 0 !important;
+    top:0 !important;
+    z-index: 99999999999999999999 !important;
+    line-height: normal !important;
+    height: auto !important;
+    width: auto !important;
+    white-space: nowrap !important;
+    background: url("../imgs/seajs-validate-pop.png") !important;
+    background: none\9 !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/seajs-validate-pop.png',sizingMethod='scale');
+}
+.vtip-pop .vtip-pop-square,.vtip-pop-error .vtip-pop-square{
+    content: " " !important;
+    position: absolute !important;
+    width: 10px !important;
+    height: 8px !important;
+    background: url("../imgs/seajs-validate-pop-square.png") !important;
+    background: none\9 !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/seajs-validate-pop-square.png',sizingMethod='scale');
+    bottom: -1px !important;
+}
+.vtip-pop-error .vtip-pop-square{
+    bottom: -2px !important;
+}
+.vtip-pop-error{
+    padding: 3px 10px 9px 8px !important;
+    font-size: 13px !important;
+}
+.vtip-pop-error:before{
+    height:15px !important;
+    width:15px !important;
+    border-radius:50% !important;
+    display:inline-block !important;
+    text-align:center !important;
+    line-height:15px !important;
+    color:#fff !important;
+    content:"!" !important;
+    margin:0 5px 0 0 !important;
+    background-color:#ff6363 !important;
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Microsoft YaHei','SimHei',sans-serif;
+        }
+        .title{
+            margin-bottom: 10px;
+            font-size: 30px;
+            display: block;
+        }
+        .module{
+            background-color:darkgray;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .tip{
+            color:crimson;
+            margin-bottom: 10px;
+        }
+        .none{
+            display: none;
+        }
+        .btn{
+            padding: 10px 20px;
+            background-color:aliceblue;
+            border-radius: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .autoPage{
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            background-color:blanchedalmond;
+            margin-right: 10px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="module">
+        <a href="https://github.com/seajs/seajs/issues/266" class="title">sea</a>
+    </div>
+    <div class="module">
+        <a href="https://github.com/seajs/seajs-css/blob/master/README.md" class="title">sea-css</a>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342400" class="title">seajs-jquery</a>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064453" class="title">seajs-utils</a>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342387" class="title">fixJsForIE8</a>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342389" class="title">placeholder</a>
+    </div>
+
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064455" class="title">seajs-waiting</a>
+        <button id="seajs_waiting_show">show</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064455" class="title">seajs-waiting</a>
+        <button id="seajs_waiting_show">show</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342385" class="title">seajs-common-tip</a>
+        <button id="seajs_common_tip_show_success">show-success</button>
+        <button id="seajs_common_tip_show_fail">show-fail</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064440" class="title">seajs-validate</a>
+        <input type="text" placeholder="银行卡" validType="bankCard" id="validateIpt">
+        <button id="seajs_validate">validate</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064427" class="title">seajs-countdown</a>
+        <button id="seajs_countdown_start">获取验证码</button>
+        <button id="seajs_countdown_stop">stop</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342362" class="title">seajs-sendVerifyCode</a>
+        <input type="text" placeholder="手机号" id="seajs_sendVerifyCode_mobile" validType="phoneNum" maxlength="11">
+        <button id="seajs_sendVerifyCode">获取验证码</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064429" class="title">seajs-httpClient</a>
+        <button id="seajs_httpClient_get">get</button>
+        <button id="seajs_httpClient_post">post</button>
+        <button id="seajs_httpClient_syncGet">syncGet</button>
+        <button id="seajs_httpClient_syncPost">syncPost</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342341" class="title">seajs-modal-common</a>
+        <button id="seajs_modal_common_show">show</button>
+        <button id="seajs_modal_common_hide">hide</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064433" class="title">seajs-ajaxForm</a>
+        <form action="http://assets.jinkaimen.com/http.txt" actionName="test">
+            <input type="text" name="test">
+            <button>submit</button>
+        </form>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064446" class="title">seajs-searchIpt</a>
+        <input type="text" name="test" id="seajs_searchIpt_ipt" minLength="0">
+        <div id="seajs_searchIpt_draw"></div>
+    </div>
+    <div class="module" id="seajs_upload_cont">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2588676" class="title">seajs-upload</a>
+        <div class="tip">请使用谷歌浏览器并关闭安全模式测试</div>
+        <img src="" alt="" height="100" width="100" id="seajs_upload_i">
+        请提交图片:<input type="file" accept="image/gif,image/jpeg,image/png,image/jpg" name="file" imgTo="seajs_upload_i">
+        请提交文件:<input type="file" name="file">
+    </div>
+    <div class="module" id="seajs_uploadImgs_cont">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2588676" class="title">seajs-uploadImgs</a>
+        <div class="tip">请使用谷歌浏览器并关闭安全模式测试</div>
+        <div>
+            <img src="" alt="" height="100" width="100">
+            <img src="" alt="" height="100" width="100">
+            <img src="" alt="" height="100" width="100">
+        </div>
+        <label for="seajs_uploadImgs_subBtn" class="btn">选择图片</label>
+        <input type="file" accept="image/gif,image/jpeg,image/png,image/jpg" name="file" imgTo="i" id="seajs_uploadImgs_subBtn" class="none">
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064425" class="title">seajs-autoPage</a>
+        <div id="seajs_autoPage_mode1" class="autoPage">
+            
+        </div>
+        <div id="seajs_autoPage_mode2" class="autoPage">
+            
+        </div>
+        <button id="seajs_autoPage_mode1_start">滑动模式加载开始</button>
+        <button id="seajs_autoPage_mode2_start">点击模式加载开始</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064444" class="title">seajs-passwordWidget</a>
+        <div class="tip">请使用手机模式调试</div>
+        <input type="text" readonly placeholder="输入密码" id="seajs_passwordWidget_ipt">
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064449" class="title">seajs-switchButton</a>
+        <div class="tip">请使用手机模式调试</div>
+        <div id="seajs_switchButton">
+            
+        </div>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=2064449" class="title">seajs-topTip</a>
+        <button id="seajs_topTip">show</button>
+    </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342404" class="title">seajs-gritter</a>
+        <button id="seajs_gritter">show</button>
+    </div>
+    <script src="js/sea.js" id="seajsnode"></script>
+    <script>
+        var assetsUrl="http://assets.jinkaimen.com/"
+        var bindClick=function(id,fuc){
+            var btn=document.getElementById(id),
+                jsName=btn.parentNode.getElementsByTagName("a")[0].innerHTML;
+            btn.addEventListener("click",function(){
+                var that=this;
+                seajs.use(jsName,function(o){
+                    fuc.call(that,o);
+                })                
+            });
+        },
+        showTip=function(txt,isError){
+            seajs.use("seajs-common-tip",function(o){
+                o.show(txt,isError);
+            });
+        }
+        seajs.use("seajs-utils",function(utils){
+            //seajs_common_tip
+            bindClick("seajs_common_tip_show_success",function(o){
+                o.show("success");
+            });
+            bindClick("seajs_common_tip_show_fail",function(o){
+                o.show("fail",false);
+            });
+            //seajs-validate
+            var validateIpt=utils.$id("validateIpt");
+            seajs.use("seajs-validate",function(){
+                bindClick("seajs_validate",function(){
+                    var validResult=validateIpt.validMe(false);
+                    if(!validResult.isok){
+                        validateIpt.showErrorTip(validResult.tip);
+                    }else{
+                        showTip("校验通过!");
+                    }
+                });
+            });
+            bindClick("seajs_countdown_start",function(o){
+                o.start(this);
+            });
+            bindClick("seajs_countdown_stop",function(o){
+                o.stop();
+            });
+            bindClick("seajs_httpClient_get",function(o){
+                o.get(assetsUrl+"http.txt",function(rs,txt){
+                    showTip("返回文本如下:<br>"+txt+"<br>json序列请查看控制台");
+                    console.log(rs);
+                });
+            });
+            bindClick("seajs_httpClient_post",function(o){
+                o.post(assetsUrl+"http.txt","",function(rs,txt){
+                    showTip("返回文本如下:<br>"+txt+"<br>json序列请查看控制台");
+                    console.log(rs);
+                });
+            });
+            seajs.use("seajs-modal-common",function(modal){
+                modal.int({
+                    content:"<div style='color:black;white-space:nowrap'>我是通用模态框</div>",
+                    hasBac:false,
+                    canClickOut:true
+                });
+                bindClick("seajs_modal_common_show",function(){
+                    modal.show();
+                });
+                bindClick("seajs_modal_common_hide",function(){
+                    modal.hide();
+                });
+            });
+            seajs.use("seajs-ajaxForm",function(myForm){
+                myForm.onFormResult=function(rs,actionName,txt){
+                    showTip("返回文本如下:<br>"+txt+"<br>json序列请查看控制台");
+                    console.log(rs);
+                }
+            });
+            seajs.use("seajs-searchIpt",function(o){
+                var rnum=1;
+                o.int({
+                    iptId:"seajs_searchIpt_ipt",
+                    url:assetsUrl+"http.txt",
+                    searchKey:"searchKey",
+                    draw:function(rs){
+                        utils.$id("seajs_searchIpt_draw").innerHTML=rs.msg+"(请求次数:"+(rnum++)+"(插件做了输入延时处理，所以请求数<=输入次数))";
+                    }
+                });
+            });
+            seajs.use("seajs-sendVerifyCode",function(o){
+                var mobileIpt=utils.$id("seajs_sendVerifyCode_mobile");
+                o.int({
+                    sendBtn:utils.$id("seajs_sendVerifyCode"),
+                    validIpts:mobileIpt,
+                    onSuccess:function(rs){
+                        showTip("验证码发送成功!返回结果:<br>"+rs.msg);
+                    },
+                    url:assetsUrl+"http.txt",
+                    parameters:function(){
+                        return "mobile"+mobileIpt.value
+                    }
+                });
+            });
+            seajs.use("seajs-upload",function(o){
+                o.int({
+                    maxFileSize:1024*1024,
+                    uploadUrl:"http://www.51xuelicai.com/file/image",
+                    uploadIpts:utils.$id("seajs_upload_cont").getElementsByTagName("input"),
+                    onUploadFinish:function(rs){
+                        if(rs.code!=0){
+                            showTip(rs.msg,false);
+                            return;
+                        }
+                        showTip("文件上传成功!请查看控制台返回内容");
+                        console.log(rs);
+                    }
+                });
+            });
+            seajs.use("seajs-uploadImgs",function(o){
+                o.int({
+                    subBtn:utils.$id("seajs_uploadImgs_subBtn"),
+                    uploadUrl:"http://www.51xuelicai.com/file/image",
+                    imgArray:utils.$id("seajs_uploadImgs_cont").getElementsByTagName("img"),
+                    name:"file",
+                    onUploadFinish:function(rs,index){
+                        if(rs.code!=0){
+                            showTip(rs.msg,false);
+                            return;
+                        }
+                        showTip("第"+index+"张图片上传成功!请查看控制台返回内容");
+                        console.log(rs);
+                    },
+                    removeFuc:function(index){
+                        showTip("取消成功!index:"+index);
+                    },
+                    maxFileSize:1024*1024
+                });
+            });
+            bindClick("seajs_waiting_show",function(o){
+                o.show("我是等待画面，将在3秒后自动消失");
+                setTimeout(o.hide,3000);
+            });
+            bindClick("seajs_autoPage_mode1_start",function(o){
+                this.setAttribute("disabled","true");
+                o.int({
+                    contId:"seajs_autoPage_mode1",
+                    url:assetsUrl+"autoPage.txt",
+                    dataKey:"result.data",
+                    pageNow:"pageNo=1",
+                    pageSize:"pageSize=5",
+                    draw:"<div>{content}</div>",
+                    isLoadOver:function(){
+                        return false;
+                    }
+                }); 
+            });
+            bindClick("seajs_autoPage_mode2_start",function(o){
+                this.setAttribute("disabled","true");
+                o.newInstance().int({
+                    contId:"seajs_autoPage_mode2",
+                    url:assetsUrl+"autoPage.txt",
+                    dataKey:"result.data",
+                    pageNow:"pageNo=1",
+                    pageSize:"pageSize=5",
+                    draw:"<div>{content}</div>",
+                    loadMode:1,
+                    isLoadOver:function(){
+                        return false;
+                    }
+                }); 
+            });
+            bindClick("seajs_passwordWidget_ipt",function(o){
+               var that=this;
+               o.onFinish=function(pwd){
+                   that.value=pwd;
+               }
+               o.show(); 
+            });
+            seajs.use("seajs-switchButton",function(o){
+                o.int({
+                    name:"滑动按钮1",
+                    parentNode:utils.$id("seajs_switchButton"),
+                    onChange:function(state){
+                        showTip("按钮1当前状态:"+state);
+                    }
+                })
+                o.newInstance().int({
+                    name:"滑动按钮2",
+                    parentNode:utils.$id("seajs_switchButton"),
+                    isOn:true,
+                    onChange:function(state){
+                        showTip("按钮2当前状态:"+state);
+                    }
+                })
+            });
+            bindClick("seajs_topTip",function(o){
+                o.show("我是顶部通知")
+            })
+            bindClick("seajs_gritter",function(o){
+                o.show("成功通知");
+                o.show("错误通知",false);
+            })
+        });
+        
+    </script>
+</body>
+</html>

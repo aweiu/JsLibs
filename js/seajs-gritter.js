@@ -1,0 +1,1 @@
+define(function(require,a,b){var c=b.uri;c=c.substring(0,c.lastIndexOf("/js/"))+"/";var d=require("seajs-jquery"),e=require("seajs-utils");a.show=function(a,b){e.use([["seajs-css",c+"css/jquery.gritter.css","jquery.gritter.min"]],function(){b!==!1&&(b=!0),d.gritter.add({title:"提示",text:a,class_name:"gritter-"+(b?"success":"error")})})}});
