@@ -6,9 +6,9 @@ define(function (require, exports, module) {
     exports.show=function(text,type){
         utils.use([
             [
-                "seajs-css",
-                assetsUrl+"css/jquery.gritter.css",
                 "jquery.gritter.min",
+                "seajs-css",
+                assetsUrl+"css/jquery.gritter.css"
             ]
         ],function(){
            if(type!==false)type=true;

@@ -48,7 +48,6 @@
 }
 
 .gritter-bottom {
-    background: url(../images/gritter.png) no-repeat left bottom;
     height: 8px;
     margin: 0;
 }
@@ -59,7 +58,6 @@
 
 .gritter-item {
     display: block;
-    background: url(../images/gritter.png) no-repeat left -40px;
     color: #eee;
     padding: 2px 11px 8px 11px;
     font-size: 11px;
@@ -104,7 +102,6 @@
 .gritter-light .gritter-bottom,
 .gritter-light .gritter-top,
 .gritter-light .gritter-close {
-    background-image: url(../images/gritter-light.png);
     color: #222;
 }
 
@@ -135,7 +132,7 @@
   height: 30px;
 }
 .gritter-close:before {
-  font-family: FontAwesome;
   font-size: 16px;
-  content: "\f00d";
+  content: "×";
+  font-weight: bold;
 }
