@@ -21,4 +21,7 @@ define(function (require, exports, module) {
             }); 
         });
     }
+    exports.newInstance=function(){
+        return exports;
+    }
 });
