@@ -164,6 +164,23 @@
         <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342404" class="title">seajs-gritter</a>
         <button id="seajs_gritter">show</button>
     </div>
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342416" class="title">seajs-tablePage</a>
+        <button id="seajs_tablePage_btn">开始</button>
+        <table id="seajs_tablePage_table">
+        <thead>
+            <tr>
+                <th>t1</th>
+                <th>t2</th>
+                <th>t3</th>
+            </tr>
+        </thead>
+        <tbody>
+                                        
+        </tbody>
+    </table>
+    </div>
+    
     <script src="js/sea.js" id="seajsnode"></script>
     <script>
         var assetsUrl="http://assets.jinkaimen.com/"
@@ -363,6 +380,21 @@
                 o.show("成功通知");
                 o.show("错误通知",false);
             })
+            bindClick("seajs_tablePage_btn",function(o){
+               o.int({
+                   "table":"seajs_tablePage_table",
+                    "url":assetsUrl+"tablePage.txt",
+                    "dataKey":"result.data", 
+                    "pageTotalKey":"result.totalPage", 
+                    "pageNow":"pageNo=1", 
+                    "pageSize":"pageSize=5",
+                    "data":[
+                        "{t1}",
+                        "{t2}",
+                        "{t3}"
+                    ]
+                }); 
+            });
         });
     </script>
 </body>

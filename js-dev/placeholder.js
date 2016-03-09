@@ -76,6 +76,7 @@ function PlaceHolder(){
             var that=this;
             if(this.myPlaceHolder){
                 this.myPlaceHolder.innerHTML=txt;
+                fixPlaceHolder(this);
                 return;
             }
             var clearPlaceHolder=function(){

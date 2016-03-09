@@ -31,10 +31,10 @@
     margin: 0 0 10px 0;
 }
 .gritter-item-wrapper.gritter-success{
-    background: rgba(89,131,75,0.92);
+    background: rgb(102,140,89);
 }
 .gritter-item-wrapper.gritter-error {
-  background: rgba(153,40,18,0.92);
+  background: rgb(157,53,53);
 }
 .gritter-top {
     height: 10px;

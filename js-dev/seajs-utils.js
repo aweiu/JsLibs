@@ -16,6 +16,38 @@ define(function (require, exports, module){
         if(new RegExp(" "+className+" ","g").test(" "+this.className+" "))return;
         this.className+=(" "+className);
     };
+    HTMLElement.prototype.appendNodes = function (obj) {
+          var rValue=[];
+          if(obj.length){
+              var tmp,tmp2;
+              for(var i=obj.length-1;i>=0;i--){
+                tmp2=obj[i];
+                rValue.splice(0,0,tmp2);
+                this.insertBefore(tmp2,tmp||null);
+                tmp=tmp2;
+              }
+          }else{
+              rValue.push(obj);
+              this.appendChild(obj);
+          }
+          return rValue;
+    };
+    HTMLElement.prototype.insertNodesBefore = function (insertNodes,beforeNode) {
+          var rValue=[];
+          if(insertNodes.length){
+              var tmp,tmp2;
+              for(var i=insertNodes.length-1;i>=0;i--){
+                tmp2=insertNodes[i];
+                rValue.splice(0,0,tmp2);
+                this.insertBefore(tmp2,tmp||beforeNode||null);
+                tmp=tmp2;
+              }
+          }else{
+              rValue.push(insertNodes);
+              this.insertBefore(insertNodes,beforeNode);
+          }
+          return rValue;
+    };
     Number.prototype.plusSign=function() {
         if(this>0){
             return "+"+this;
@@ -68,10 +100,9 @@ define(function (require, exports, module){
             httpClient.get(url,function(rs){
                 var div=document.createElement("div");
                 div.innerHTML=rs;
-                for(var i= 0,l=div.childNodes.length;i<l;i++){
-                    document.body.appendChild(div.childNodes[i]);
-                }
-                if(fuc)fuc();
+                var nodeArray=document.body.appendNodes(div.childNodes);
+                if(fuc)fuc(nodeArray);
+                div=null;
                 var task=tasks[url];
                 if(task.delayDo){
                     for(var i= 0,l=task.delayDo.length;i<l;i++){
@@ -87,6 +118,7 @@ define(function (require, exports, module){
     var newUse=function(array,fuc){
         this.num=array.length;
         this.fuc=fuc;
+        this.rValue={};
         waiting.show();
         for(var i=0;i<array.length;i++){
             this.loadFile(array[i]);
@@ -101,13 +133,15 @@ define(function (require, exports, module){
         var tmp=array[0].split(".");
         var loadFuc=((tmp.length>1&&tmp[tmp.length-1]=="html")?loadHtml.main:seajs.use);
         if (array.length == 1) {
-            loadFuc(array[0],function(){
+            loadFuc(array[0],function(o){
+                that.rValue[array[0]]=o;
                 if(--that.num==0){
-                    if(that.fuc)that.fuc();
+                    if(that.fuc)that.fuc(that.rValue);
                 }
             });
         } else {
-            loadFuc(array[0], function () {
+            loadFuc(array[0], function (o) {
+                that.rValue[array[0]]=o;
                 array.shift();
                 that.loadFile(array);
             })

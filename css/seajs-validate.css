@@ -15,7 +15,7 @@
     background: none\9 !important;
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/seajs-validate-pop.png',sizingMethod='scale');
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://assets.jinkaimen.com/imgs/seajs-validate-pop.png',sizingMethod='scale');
 }
 .vtip-pop .vtip-pop-square,.vtip-pop-error .vtip-pop-square{
     content: " " !important;
@@ -26,7 +26,7 @@
     background: none\9 !important;
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/seajs-validate-pop-square.png',sizingMethod='scale');
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://assets.jinkaimen.com/imgs/seajs-validate-pop-square.png',sizingMethod='scale');
     bottom: -1px !important;
 }
 .vtip-pop-error .vtip-pop-square{
