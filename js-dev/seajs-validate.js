@@ -300,7 +300,8 @@ define(function (require, exports, module) {
                 if(!target_pop){
                     var iptWrapper=getIptWrapper(target),
                         ih1=isHidden(target),
-                        ih2=isHidden(iptWrapper);
+                        ih2=isHidden(iptWrapper),
+                        isFirst=true;
                     if(ih1&&ih2){
                         console.log("The tip cannot be displayed on a hidden target");
                         return;
@@ -353,20 +354,20 @@ define(function (require, exports, module) {
                         if(dw.l!=dw.bl){
                             setStyleImportant(tipNode,"left:"+dw.bl);
                             if(isOverflow(tipNode)){
-                                if(iptWrapper!=target_pop){
+                                if(isFirst){
                                     setTipNodeRect(iptWrapper);
                                 }else{
                                     console.log("0检测到错误提示被如下节点遮住,且无法被自动修复,请检查样式");
                                     console.log(rs.by);
                                 }
                             }
-                        }else if(iptWrapper!=target_pop){
+                        }else if(isFirst){
                             setTipNodeRect(iptWrapper);
                         }else{
                             console.log("1检测到错误提示被如下节点遮住,且无法被自动修复,请检查样式");
                             console.log(rs.by);
                         }
-                    }else if(iptWrapper!=target_pop){
+                    }else if(isFirst){
                         setTipNodeRect(iptWrapper);
                     }else{
                         console.log("2检测到错误提示被如下节点遮住,且无法被自动修复,请检查样式");
