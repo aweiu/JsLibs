@@ -22,7 +22,7 @@ define(function (require, exports, module) {
     drawTable = function (data, page) {
         setTBodyInnerHTML(tbody,"");
         try {
-            var dataJson = eval("data." + config.dataKey);
+            var dataJson = config.dataKey?eval("data." + config.dataKey):data;
         } catch (e) {
             console.log(e);
         } finally {
