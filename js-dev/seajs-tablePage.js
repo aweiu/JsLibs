@@ -41,7 +41,11 @@ define(function (require, exports, module) {
                 var td = document.createElement("td");
                 var valueTmp = config.data[k];
                 if (typeof (valueTmp) == "function") {
-                    var vResult=valueTmp(dataJson[i]);
+                    var vResult=valueTmp(dataJson[i],{
+                        baseJson:data,
+                        rows:i,
+                        columns:k
+                    });
                 } else if (valueTmp.substring(0, 1) == "$") {
                     vResult = valueTmp.substring(1, valueTmp.length) / 1 + i;
                 } else {

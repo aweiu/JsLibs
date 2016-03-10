@@ -114,14 +114,17 @@ define(function (require, exports, module) {
         removeLoading();
         if (rs) {
             for (var i = 0; i < rs.length; i++) {
-                var output = drawFuc(rs[i]);
+                var output = drawFuc(rs[i],{
+                    baseJson:baseRs,
+                    index:i
+                });
                 if (typeof (output) != "object") {
                     dataCont.innerHTML += exports.formatData(output, rs[i]);
                 } else {
                     dataCont.appendChild(output);
                 }
             }
-            if (config.onFinishDraw)config.onFinishDraw(rs);
+            if (config.onFinishDraw)config.onFinishDraw(rs,baseRs);
         }
         var isLessPageSize=(!rs || rs.length < config.pageSize.split("=")[1] / 1);
         if (isLessPageSize&&dataCont.innerHTML == "" && config.emptyTip) {
