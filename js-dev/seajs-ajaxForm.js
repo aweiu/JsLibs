@@ -129,16 +129,16 @@ define(function (require, exports, module) {
     exports.getFormData=function(frm){
         var data = "";
         var iptType = ["input", "textarea", "select"];
-        for (var j = 0; j < iptType.length; j++) {
+        for (var j = 0,l=iptType.length; j <l ; j++) {
             var ipts = frm.getElementsByTagName(iptType[j]);
-            for (var k = 0; k < ipts.length; k++) {
+            for (var k = 0,m=ipts.length; k < m; k++) {
                 if(ipts[k].type=="radio"&&!ipts[k].checked)continue;
                 if (ipts[k].name != "") {
                     data += ipts[k].name + "=" + ipts[k].value + "&";
                 }
             }
         }
-        return data;
+        return data.substring(0,data.length-1);
     }
     exports.newInstance=function(){
         return exports;

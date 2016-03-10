@@ -56,6 +56,15 @@ define(function (require, exports, module) {
                 }
             }
         },
+        loadStyle=function(node,style){
+            for(var o in style){
+                if(style.hasOwnProperty(o)){
+                    node.style[o]=style[o]
+                }else{
+                    break;
+                }
+            }
+        },
         addRemoveBtn = function (img, index) {
             var removeBtn=img.removeBtn;
             var main = function () {
@@ -73,6 +82,7 @@ define(function (require, exports, module) {
                 mySuperWrapper.appendChild(removeBtn);
                 removeBtn.innerHTML = "×";
                 removeBtn.style.cssText = "width:" + 14 + "px;height:" + 14 + "px;position:absolute;z-index:99999999999;background-color:#e8464a;color:white;line-height:14px;text-align:center;font-weight:bold;cursor: pointer;border-radius:50%;";
+                loadStyle(removeBtn,config.removeBtnStyle);
                 img.addEventListener("load", main);
                 removeBtn.addEventListener("click", function () {
                     if (config.removeFuc)config.removeFuc(index);
@@ -174,6 +184,7 @@ define(function (require, exports, module) {
                     waiting_bg=document.createElement("table");
                     img.waiting_bg=waiting_bg;
                     waiting_bg.style.cssText = "position:absolute;background-color: rgba(0, 0, 0, .5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);z-index:99999999999;";
+                    loadStyle(waiting_bg,config.loadingStyle);
                     var td = document.createElement("td");
                     td.style.cssText = "color:white;text-align:center;vertical-align: middle;";
                     td.innerHTML = "<img src='"+assetsUrl+"/imgs/seajs-uploadImgs-loading.gif'/>";
