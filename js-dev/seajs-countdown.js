@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     var obj;var objbc;var objc;var timer;
     exports.start=function(btn,secs){
         obj=btn;
-        obj.setAttribute("disabled","true");
+        obj.disabled=true;
         objbc=obj.style.backgroundColor;
         objc=obj.style.color;
         var t=(secs==null?60:secs);
@@ -20,7 +20,7 @@ define(function (require, exports, module) {
     }
     exports.stop=function(){
         clearInterval(timer);
-        obj.removeAttribute("disabled");
+        obj.disabled=false;
         obj.style.backgroundColor=objbc;
         obj.style.color=objc;
         obj.innerHTML="重新获取";

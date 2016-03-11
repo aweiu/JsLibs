@@ -191,4 +191,21 @@ define(function (require, exports, module){
     exports.newInstance = function () {
         return exports;
     };
+    exports.getParameter=function(name){
+        var parametes=location.href.split("?")[1];
+        if(parametes){
+            parametes=parametes.split("&");
+            for(var i=parametes.length-1;i>=0;i--){
+                var tmp=parametes[i].split("=");
+                if(tmp[0]==name){
+                    return tmp[1];
+                }
+            }
+            return null;
+        }
+        return null;
+    };
+    exports.bindClick=function(id,fuc){
+        exports.$id(id).addEventListener("click",fuc);
+    };
 });

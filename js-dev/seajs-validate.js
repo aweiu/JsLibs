@@ -283,7 +283,7 @@ define(function (require, exports, module) {
                     return {
                         h:h,
                         w:sr.right-sr.left,
-                        t:(nr.bottom-nr.top-h)/2,
+                        t:(nr.bottom-nr.top-h)/2-toInt(os.paddingTop),
                     }
                 }else{
                     return {h:0,w:0,t:0}
@@ -317,10 +317,10 @@ define(function (require, exports, module) {
                     dw=function(obj){
                         var mySuperWrapper=obj.parentNode.mySuperWrapper,
                             offset=getOffset(obj,obj.parentNode),
-                            tipNodeRect=tipNode.getBoundingClientRect(),
+                            tipNodeRect=tipNode.getBoundingClientRect();
                             bdw={
-                                l:offset.left,
-                                t:offset.top-tipNodeRect.bottom+tipNodeRect.top-5
+                                l:offset.left+toInt(os.paddingLeft),
+                                t:offset.top-tipNodeRect.bottom+tipNodeRect.top-5+toInt(os.paddingTop)
                             };
                         if(os.position!="fixed"){
                             offset=getOffset(mySuperWrapper,mySuperWrapper.parentNode);

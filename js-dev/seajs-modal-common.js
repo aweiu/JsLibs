@@ -49,12 +49,12 @@ define(function (require, exports, module) {
             };
         this.enable=function(){
             setTimeout(function(){
-                wrap_content.addEventListener("click", wClick);
+                waiting_wrap.addEventListener("click", wClick);
                 document.addEventListener("click",dClick);
             },0);
         }
         this.dis=function(){
-            wrap_content.removeEventListener("click", wClick);
+            waiting_wrap.removeEventListener("click", wClick);
             document.removeEventListener("click",dClick);
         }
     };
@@ -65,6 +65,7 @@ define(function (require, exports, module) {
             if (timer)clearInterval(timer);
             scrollCtrl.enable();
             if(hideOnClickOut)hideOnClickOut.dis();
+            if(config.afterHide)config.afterHide();
         }
     }
     var autoHide = function () {

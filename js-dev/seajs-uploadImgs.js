@@ -242,6 +242,7 @@ define(function (require, exports, module) {
                             } else {
                                 return;
                             }
+                            img.uploadImgCode--;
                             var rs = window.frames[this.name].document.body.innerHTML;
                             rs = rs.replace(/<.+?>/gim, '');
                             try {
@@ -273,6 +274,11 @@ define(function (require, exports, module) {
                 dataForm.appendChild(this);
                 ifr.hasSubmit = true;
                 dataForm.submit();
+                if(!img.hasOwnProperty("uploadImgCode")){
+                    img.uploadImgCode=1
+                }else{
+                    img.uploadImgCode++;
+                }
             }
         },
         clickFuc = function (e) {
@@ -293,6 +299,9 @@ define(function (require, exports, module) {
                 e.preventDefault();
             }
         };
+    exports.isBusy=function(img){
+        return img.uploadImgCode==0?true:false;
+    };
     exports.int = function (configure) {
         config = configure;
         var subBtn = config.subBtn;
