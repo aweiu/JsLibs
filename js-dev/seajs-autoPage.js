@@ -12,8 +12,12 @@ define(function (require, exports, module) {
     exports.int = function (configure) {
         config = configure;
         var pageCont = document.getElementById(config.contId);
-        dataCont = document.createElement("div");
-        pageCont.appendChild(dataCont);
+        if(config.hasWrapper!==false){
+            dataCont = document.createElement("autoPageNode");
+            pageCont.appendChild(dataCont);
+        }else{
+            dataCont=pageCont;
+        }
         loadding = document.createElement("table");
         loadding.style.cssText = "width:100%;height: 15px;margin: 10px auto;clear: both;text-align: center;float:left;";
         if (config.autoRun !== false) {
@@ -21,6 +25,10 @@ define(function (require, exports, module) {
         }
     }
     exports.setConfig = function (key, value) {
+        if(key=="hasWrapper"){
+            console.log("暂不支持修改hasWrapper");
+            return;
+        }
         config[key]=value;
     }
     exports.getConfig = function (key) {
@@ -33,7 +41,7 @@ define(function (require, exports, module) {
         loadding.appendChild(loadingImg);
         loadding.innerHTML += "<span style='font-size:15px;color:#999999;'>正在加载...</span>";
         var scrollCont = document.getElementById(config.contId);
-        if(dataCont.parentNode!=scrollCont)scrollCont.appendChild(dataCont);
+        if(dataCont!=scrollCont&&dataCont.parentNode!=scrollCont)scrollCont.appendChild(dataCont);
         while(true){
             if(getComputedStyle(scrollCont).overflowY!="hidden")break;
             if(scrollCont==document.body){

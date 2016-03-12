@@ -46,7 +46,7 @@ define(function (require, exports, module) {
                 }
             };
             var parameters=config.parameters;
-            if(typeof(config.parameters)=="function"){
+            if(parameters&&typeof(parameters)=="function"){
                 parameters=config.parameters();
             }
             if(config.method=="post"){

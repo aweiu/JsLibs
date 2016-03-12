@@ -31,7 +31,15 @@ define(function (require, exports, module) {
     var search=function(key){
         var code=++requestCount;
         var url = config.url;
-        url += ((config.url.indexOf("?") != -1 ? "&" : "?") + config.searchKey+"="+key);
+        var parameters=config.parameters;
+        if(parameters){
+            if(typeof(parameters)=="function"){
+                parameters=config.parameters();
+            }
+        }else{
+            parameters=config.searchKey+"="+key;
+        }
+        url += ((config.url.indexOf("?") != -1 ? "&" : "?") + parameters);
         var httpCallBac=function(rs){
             if(rs!=null){
                 searchRecord[url]=rs;
