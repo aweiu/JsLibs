@@ -9,7 +9,7 @@ define(function (require, exports, module) {
     var searchRecordNum=0;var searchRecord_cacheKey;
     exports.int = function (configure) {
         config=configure;
-        ipt=document.getElementById(config.iptId);
+        ipt=config.iptNode||document.getElementById(config.iptId);
         ipt.addEventListener("input",function(){
             if(timer)clearTimeout(timer);
             var iptValue=this.value.replace(/\s/g,"");

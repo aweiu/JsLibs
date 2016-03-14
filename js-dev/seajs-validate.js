@@ -74,7 +74,6 @@ define(function (require, exports, module) {
             BirthDay = this.ID18.substr(12, 2);
         return BirthDay;
     }
-
     // 返回性别，1：男，0：女
     clsIDCard.prototype.GetSex = function () {
         var Sex = '';
@@ -296,6 +295,8 @@ define(function (require, exports, module) {
             return rValue;
         },
         fixedTip=function(target,tipNode){
+            var zIndex=target.getAttribute("vpopzindex");
+            if(zIndex)setStyleImportant(tipNode,"z-index:"+zIndex);
             var setTipNodeRect=function(target_pop){
                 if(!target_pop){
                     var iptWrapper=getIptWrapper(target),
@@ -384,6 +385,7 @@ define(function (require, exports, module) {
     var prototypes={
         "showErrorTip":function (tip,focusOnError) {
             if(this.onIpt!=null)return;
+            tip=tip||this.getAttribute("errorTip");
             var that=this,
                 tip_pop_error,
                 iptWrapper=getIptWrapper(that);
