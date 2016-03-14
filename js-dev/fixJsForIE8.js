@@ -34,6 +34,7 @@ if (!Array.prototype.forEach) {
 }
 window.HTMLElement = window.HTMLElement || Element;
 window.HTMLDocument = window.HTMLDocument || Document;
+
 HTMLElement.prototype.addEventListener = HTMLElement.prototype.addEventListener || function (eventType, fuc) {
         var expandFuc = function () {
             return true
@@ -161,3 +162,4 @@ window.getComputedStyle = window.getComputedStyle || function (obj) {
         }
         return style;
     };
+HTMLElement.prototype.hasOwnProperty=Object.prototype.hasOwnProperty;

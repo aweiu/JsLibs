@@ -133,10 +133,10 @@ define(function (require, exports, module) {
         for (var j = 0,l=iptType.length; j <l ; j++) {
             var ipts = frm.getElementsByTagName(iptType[j]);
             for (var k = 0,m=ipts.length; k < m; k++) {
-                var ipt=ipts[k],name=(ipt.tagName=="SELECT"?ipt.options[ipt.selectedIndex].name:ipt.name);
+                var ipt=ipts[k];
                 if(ipt.type=="radio"&&!ipt.checked)continue;
                 if (ipt.name != "") {
-                    data += name + "=" + ipt.value + "&";
+                    data += ipt.name + "=" + ipt.value + "&";
                 }
             }
         }
