@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                     } catch (e) {
                         if(isEvalError){
                             if(config.onSuccess){
-                                config.onSuccess(onSuccess,rs,this.responseText,redo);
+                                config.onSuccess(onSuccess,this.responseText,this.responseText,redo);
                             }else if(onSuccess){
                                 onSuccess(this.responseText,this.responseText);
                             }

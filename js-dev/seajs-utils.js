@@ -2,9 +2,6 @@ define(function (require, exports, module){
     var httpClient=require("seajs-httpClient"),
         waiting = require("seajs-waiting"),
         myUtils=require("/seajs-myUtils");
-    for(var o in myUtils){
-        if(myUtils.hasOwnProperty(o))exports[o]=myUtils[o];
-    }
     String.prototype.replaceAll = function(s1,s2){
         return this.replace(new RegExp(s1,"gm"),s2);
     };
@@ -208,4 +205,7 @@ define(function (require, exports, module){
     exports.bindClick=function(id,fuc){
         exports.$id(id).addEventListener("click",fuc);
     };
+    for(var o in myUtils){
+        if(myUtils.hasOwnProperty(o))exports[o]=myUtils[o];
+    }
 });

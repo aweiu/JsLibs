@@ -51,9 +51,8 @@ define(function (require, exports, module) {
             utils.$id("password_widget_keyboard").addEventListener("touchend",function(e){
                 e.preventDefault();
                 var target= e.srcElement|| e.target;
-                if(target.tagName=="IMG")target=target.parentNode;
-                if(target.tagName=="BUTTON"&&target.innerHTML!=""){
-                    if(target.className!="password-widget-greyKey"){
+                if(target.tagName=="BUTTON"||target.className=="password-widget-delKey"){
+                    if(target.className!="password-widget-delKey"){
                         if(passwordTxt.length<6){
                             passwords[passwordTxt.length].innerHTML="●";
                             passwordTxt+=target.innerHTML;

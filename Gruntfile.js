@@ -18,7 +18,7 @@ module.exports=function(grunt){
             all:{
                 files: [{
                     expand:true,
-                    cwd:'js-dev',//js-tmp目录下
+                    cwd:'js-dev',//js-dev目录下
                     src:'**/*.js',//所有js文件
                     dest: './js'//输出到此目录下
                 }]
@@ -62,9 +62,9 @@ module.exports=function(grunt){
                   'js/*.js'
                 ]
             },
-            less:{
-                files:'less/*.less',
-                task:'less:main'
+            js:{
+                files:'./js-dev/*.js',
+                tasks:'uglify:all'
             }
         }
     });
@@ -73,7 +73,7 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-less');
-//	grunt.registerTask('default', ['connect','watch']);
+	// grunt.registerTask('default', ['connect','watch']);
     grunt.registerTask('less', 'less');
     grunt.registerTask('default', 'uglify:all');
 }
