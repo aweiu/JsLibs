@@ -99,7 +99,7 @@ define(function (require, exports, module) {
             return;
         }
         waiting_bg = document.createElement("table");
-        waiting_bg.style.cssText = "position:fixed;z-index:99999999999;";
+        waiting_bg.style.cssText = "position:fixed;z-index:"+(config.zIndex||99999999999)+";";
         if (config.hasBac!==false){
             waiting_bg.style.cssText += ";top:0;left:0;height:100%;width:100%;background-color: rgba(0, 0, 0, .5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);";
         }else if(!config.canClickOut){

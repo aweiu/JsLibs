@@ -118,9 +118,8 @@ function PlaceHolder(){
     };
     HTMLInputElement.prototype.removePlaceHolder=function(){
         if(this.myPlaceHolder){
-            this.mySuperWrapper.removeChild(this.myPlaceHolder);
+            this.parentNode.mySuperWrapper.removeChild(this.myPlaceHolder);
             delete this.myPlaceHolder;
-            delete this.mySuperWrapper;
         }
     };
     HTMLTextAreaElement.prototype.addPlaceHolder=HTMLInputElement.prototype.addPlaceHolder;

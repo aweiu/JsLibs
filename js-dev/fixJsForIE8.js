@@ -143,8 +143,8 @@ HTMLElement.prototype.getBoundingClientRect = function () {
         right:rValue.right,
         top:rValue.top,
         bottom:rValue.bottom,
-        width:rValue.bottom-rValue.top,
-        height:rValue.right-rValue.left
+        width:rValue.right-rValue.left,
+        height:rValue.bottom-rValue.top
     };
 };
 window.getComputedStyle = window.getComputedStyle || function (obj) {

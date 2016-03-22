@@ -106,12 +106,6 @@ define(function (require, exports, module) {
         }
     });
     HTMLFormElement.prototype.mySubmit=function(onlySubmit){
-        if(window.event&&window.event.type=="click"){
-            var btn=window.event.srcElement || window.event.target;
-            if(btn.tagName=="BUTTON"){
-                form.disabled=true;
-            }
-        }
         if(onlySubmit){
             waiting.show();
             this.submit();
