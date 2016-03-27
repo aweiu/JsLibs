@@ -205,6 +205,13 @@ define(function (require, exports, module){
     exports.bindClick=function(id,fuc){
         exports.$id(id).addEventListener("click",fuc);
     };
+    exports.bindCopy=function(btn,txt){
+        seajs.use("ZeroClipboard.min",function(xx){
+            ZeroClipboard.config( { swfPath: "/flash/ZeroClipboard.swf" } );
+            new ZeroClipboard(btn);
+            btn.setAttribute("data-clipboard-text",txt);
+        })
+    }
     if(myUtils.superInt)myUtils.superInt(exports);
     for(var o in myUtils){
         if(myUtils.hasOwnProperty(o)){
