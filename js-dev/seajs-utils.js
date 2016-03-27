@@ -205,7 +205,12 @@ define(function (require, exports, module){
     exports.bindClick=function(id,fuc){
         exports.$id(id).addEventListener("click",fuc);
     };
+    if(myUtils.superInt)myUtils.superInt(exports);
     for(var o in myUtils){
-        if(myUtils.hasOwnProperty(o))exports[o]=myUtils[o];
+        if(myUtils.hasOwnProperty(o)){
+            exports[o]=myUtils[o];
+        }else{
+            break;
+        }
     }
 });

@@ -176,7 +176,12 @@
         </tbody>
     </table>
     </div>
-    
+    <div class="module">
+        <a href="http://tech.jinkaimen.com/confluence/pages/viewpage.action?pageId=3342459" class="title" name="seajs-calendar">seajs-calendar</a>
+        <input type="text" class="calendarIpt" placeholder="请选择生日">
+        <input type="text" class="calendarIpt" placeholder="请选择生日">
+        <input type="text" class="calendarIpt" placeholder="请选择生日">
+    </div>
     <script src="js/sea.js" id="seajsnode"></script>
     <script>
         var assetsUrl="http://assets.jinkaimen.com/"
@@ -390,6 +395,17 @@
                         "{t3}"
                     ]
                 }); 
+            });
+            //seajs-calendar
+            var now=new Date(),
+                start=new Date(),
+                end=new Date();
+            start.setFullYear(now.getFullYear()-90);
+            end.setFullYear(now.getFullYear()-18);
+            seajs.use("seajs-calendar",function(calendar){
+                calendar.bind($(".calendarIpt"),{
+                    selectedRang:[start,end]
+                });
             });
         });
     </script>

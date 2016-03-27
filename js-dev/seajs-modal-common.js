@@ -120,7 +120,7 @@ define(function (require, exports, module) {
         }
         if (config.hasWrap == null || config.hasWrap) {
             waiting_wrap.style.cssText += ";background-color: white;padding: 50px 0;border-radius: 10px;position: relative;overflow: hidden;";
-            wrap_content.style.cssText += ";padding:0 90px;";
+            wrap_content.style.cssText += ";padding:2px 90px;";
             fixModal.setOffset(-100);
             if (config.padding) {
                 waiting_wrap.style.padding = config.padding;

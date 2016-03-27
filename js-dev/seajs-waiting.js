@@ -24,7 +24,7 @@ define(function (require, exports, module) {
         if(!timer)timer=setTimeout(modal.show,400);
     };
     exports.hide = function () {
-        if(--showCount==0){
+        if(--showCount<=0){
             clearTimeout(timer);
             modal.hide();
             timer=null;
