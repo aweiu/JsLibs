@@ -202,14 +202,16 @@ define(function (require, exports, module){
         }
         return null;
     };
-    exports.bindClick=function(id,fuc){
-        exports.$id(id).addEventListener("click",fuc);
+    exports.bindClick=function(node,fuc){
+        if(!node.nodeType)node=exports.$id(node);
+        node.addEventListener("click",fuc);
     };
-    exports.bindCopy=function(btn,txt){
+    exports.bindCopy=function(node,txt){
         seajs.use("ZeroClipboard.min",function(xx){
             ZeroClipboard.config( { swfPath: "/flash/ZeroClipboard.swf" } );
-            new ZeroClipboard(btn);
-            btn.setAttribute("data-clipboard-text",txt);
+            if(!node.nodeType)node=exports.$id(node);
+            new ZeroClipboard(node);
+            node.setAttribute("data-clipboard-text",txt);
         })
     }
     if(myUtils.superInt)myUtils.superInt(exports);
