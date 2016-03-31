@@ -1,4 +1,6 @@
 define(function (require, exports, module){
+    var assetsUrl=module.uri;
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var httpClient=require("seajs-httpClient"),
         waiting = require("seajs-waiting"),
         myUtils=require("/seajs-myUtils");
@@ -206,13 +208,26 @@ define(function (require, exports, module){
         if(!node.nodeType)node=exports.$id(node);
         node.addEventListener("click",fuc);
     };
-    exports.bindCopy=function(node,txt){
-        seajs.use("ZeroClipboard.min",function(xx){
-            ZeroClipboard.config( { swfPath: "/flash/ZeroClipboard.swf" } );
-            if(!node.nodeType)node=exports.$id(node);
-            new ZeroClipboard(node);
-            node.setAttribute("data-clipboard-text",txt);
-        })
+    exports.bindCopy=function(config){
+        var txt=config.txt,
+            onSuccess=config.onSuccess,
+            node=config.node;
+        if(window.clipboardData){
+            exports.bindClick(node,function(){
+                window.clipboardData.clearData();
+                window.clipboardData.setData("Text",txt);
+                if(onSuccess)onSuccess();
+            })
+        }else{
+            seajs.use("ZeroClipboard.min",function(){
+                ZeroClipboard.config( { swfPath: assetsUrl+"flash/ZeroClipboard.swf" } );
+                if(!node.nodeType)node=exports.$id(node);
+                node.setAttribute("data-clipboard-text",txt);
+                var clip=new ZeroClipboard(node);
+                clip.on("afterCopy",onSuccess);
+                clip.on("error",config.onError);
+            })
+        }
     }
     if(myUtils.superInt)myUtils.superInt(exports);
     for(var o in myUtils){

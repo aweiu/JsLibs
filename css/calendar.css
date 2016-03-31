@@ -77,7 +77,6 @@ calendarnode input{
     z-index: 2;
 }
 .calendar-ct,
-.calendar-hd,
 .calendar-views .week,
 .calendar-views .days {
     overflow: hidden;

@@ -528,8 +528,8 @@ define(function (require, exports, module) {
                 checkLength = function () {
                     var maxLength = that.getAttribute("maxLength");
                     var minLength = that.getAttribute("minLength");
-                    if(that.tagName=="SELECT"&&iptValue.replace(/\s+/g, "").indexOf("请选择")!=-1){
-                        tip = getErrorTip("尚未选择任何项");
+                    if(that.tagName=="SELECT"){
+                        if(iptValue.replace(/\s+/g, "").indexOf("请选择")!=-1)tip = getErrorTip("尚未选择任何项");
                     }else{
                         var iptValue_length=iptValue.length;
                         if(that.getAttribute("isByte")=="true"){
