@@ -3,7 +3,7 @@
  */
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
     var utils=require("seajs-utils"),
         hasInt=false,
         wrap,passwordTxt="",passwords,

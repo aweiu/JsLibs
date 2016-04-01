@@ -1,12 +1,12 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
     var $=require("seajs-jquery"),jQuery=$,
         utils=require("seajs-utils");
     var doAfterUse=function(fuc){
     	utils.use([
             [
-                "jquery.gritter.min",
+                "jquery-gritter-min",
                 assetsUrl+"css/jquery.gritter.css"
             ]
         ],fuc);

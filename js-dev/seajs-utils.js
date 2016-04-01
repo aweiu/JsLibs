@@ -1,6 +1,6 @@
 define(function (require, exports, module){
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
     var httpClient=require("seajs-httpClient"),
         waiting = require("seajs-waiting"),
         myUtils=require("/seajs-myUtils");
@@ -219,7 +219,7 @@ define(function (require, exports, module){
                 if(onSuccess)onSuccess();
             })
         }else{
-            seajs.use("ZeroClipboard.min",function(){
+            seajs.use("ZeroClipboard-min",function(){
                 ZeroClipboard.config( { swfPath: assetsUrl+"flash/ZeroClipboard.swf" } );
                 if(!node.nodeType)node=exports.$id(node);
                 node.setAttribute("data-clipboard-text",txt);

@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
 	var modal=require("seajs-modal-common").newInstance();
 	var div=document.createElement("div");
 	div.style.cssText="text-align: center;overflow:hidden;min-width:80px;";

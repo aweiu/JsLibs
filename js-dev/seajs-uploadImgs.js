@@ -3,7 +3,7 @@
  */
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
     var config, selectNum = 0, ifr_code = 0, removeIndex = [],imgArray;
     var getIfrCode = function () {
             while (document.getElementsByName("ifr_" + ifr_code).length > 0)ifr_code++;

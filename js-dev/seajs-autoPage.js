@@ -3,7 +3,7 @@
  */
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
     var httpClient = require("seajs-httpClient");
     var config, loadding, tipFuc, drawFuc, dataCont, requestCount = 0, loadMode,isScrollBottom,
         loadingImg = document.createElement("img");
