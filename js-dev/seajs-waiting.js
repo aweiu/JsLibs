@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var modal=require("seajs-modal-common").newInstance();
     var timer,
         div=document.createElement("div"),

@@ -1,6 +1,6 @@
 define(function (require, exports, module){
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var httpClient=require("seajs-httpClient"),
         waiting = require("seajs-waiting"),
         myUtils=require("/seajs-myUtils");

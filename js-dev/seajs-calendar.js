@@ -3,7 +3,7 @@
  */
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var utils=require("seajs-utils");
     var $ = require("seajs-jquery"), jQuery = $;
     var createWrapper=function(node){

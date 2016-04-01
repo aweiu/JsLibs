@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var $=require("seajs-jquery"),jQuery=$,
         utils=require("seajs-utils");
     var doAfterUse=function(fuc){

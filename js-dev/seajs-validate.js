@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     seajs.use("seajs-css",function(){
         seajs.use(assetsUrl+"css/seajs-validate.css");
     });

@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var assetsUrl=module.uri;
-    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/libs/";
+    assetsUrl=assetsUrl.substring(0,assetsUrl.lastIndexOf("/js/"))+"/";
     var waiting_bg,
         config, timer, timer_out, wrap_content, waiting_wrap,hideOnClickOut;
     exports.int = function (configure) {
