@@ -12,10 +12,11 @@
     width: auto !important;
     white-space: nowrap !important;
     background: url("../imgs/seajs-validate-pop.png") !important;
-    background: none\9 !important;
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://assets.jinkaimen.com/imgs/seajs-validate-pop.png',sizingMethod='scale');
+    background: none\9 !important;
+    /*由于AlphaImageLoader的路径是相对于页面路径的，故该属性转移到js中设置了，以便于能自适应线上/本地lib*/
+    /*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/libs/imgs/seajs-validate-pop.png',sizingMethod='scale');*/
 }
 .vtip-pop .vtip-pop-square,.vtip-pop-error .vtip-pop-square{
     content: " " !important;
@@ -23,10 +24,11 @@
     width: 10px !important;
     height: 8px !important;
     background: url("../imgs/seajs-validate-pop-square.png") !important;
-    background: none\9 !important;
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://assets.jinkaimen.com/imgs/seajs-validate-pop-square.png',sizingMethod='scale');
+    background: none\9 !important;
+    /*由于AlphaImageLoader的路径是相对于页面路径的，故该属性转移到js中设置了，以便于能自适应线上/本地lib*/
+    /*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/libs/imgs/seajs-validate-pop-square.png',sizingMethod='scale');*/
     bottom: -1px !important;
 }
 .vtip-pop-error .vtip-pop-square{

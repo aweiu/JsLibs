@@ -381,6 +381,15 @@ define(function (require, exports, module) {
                     setTipNodeRect();
                 });
             });
+        }, createPop=function(className){
+            var pop = document.createElement("validnode");
+            pop.className=className;
+            pop.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+assetsUrl+"imgs/seajs-validate-pop.png',sizingMethod='scale')";
+            var pop_square=document.createElement("validnode");
+            pop_square.className="vtip-pop-square";
+            pop_square.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+assetsUrl+"imgs/seajs-validate-pop-square.png',sizingMethod='scale')";
+            pop.tipNodeSquare=pop_square;
+            return pop;
         };
     var prototypes={
         "showErrorTip":function (tip,focusOnError) {
@@ -410,11 +419,7 @@ define(function (require, exports, module) {
             if(that.getAttribute("noErrorTip")!="true") {
                 tip_pop_error=that.tip_pop_error;
                 if(!tip_pop_error){
-                    tip_pop_error = document.createElement("validnode");
-                    tip_pop_error.className = "vtip-pop-error";
-                    var tipNodeSquare=document.createElement("validnode");
-                    tipNodeSquare.className="vtip-pop-square";
-                    tip_pop_error.tipNodeSquare=tipNodeSquare;
+                    tip_pop_error=createPop("vtip-pop-error");
                     that.tip_pop_error=tip_pop_error;
                 }
                 tip_pop_error.innerHTML = tip;
@@ -738,13 +743,7 @@ define(function (require, exports, module) {
             });
         }
         if(specialTip!=""){
-            if(!tipNode){
-                tipNode=document.createElement("validnode");
-                tipNode.className="vtip-pop";
-                var tipNodeSquare=document.createElement("validnode");
-                tipNodeSquare.className="vtip-pop-square";
-                tipNode.tipNodeSquare=tipNodeSquare;
-            }
+            if(!tipNode)tipNode=createPop("vtip-pop");
             this.addEventListener("focus",specialIptFuc);
             tipNode.innerHTML=specialTip;
             tipNode.appendChild(tipNode.tipNodeSquare);
