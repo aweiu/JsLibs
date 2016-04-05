@@ -7,20 +7,24 @@ module.exports=function(grunt){
 			options: {
                 mangle: {
                   except: ['require']
-                }
+                },
+                banner: '/*! 作者:阿伟 */\n'+
+                        '/*! git:https://github.com/328080339/JsLibs.git */\n'+
+                        '/*! 推荐sealoader模块加载器:https://www.npmjs.com/package/sealoader */\n'+
+                        '/*! 最后修改于 <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
             //单个js压缩
             one: {
-                src: "./js-dev/"+js+".js",
-                dest: "./js/"+js+".js"
+                src: "./libs/js-dev/"+js+".js",
+                dest: "../libs/js/"+js+".js"
             },
             //js-tmp目录下所有的
             all:{
                 files: [{
                     expand:true,
-                    cwd:'js-dev',//js-dev目录下
+                    cwd:'./libs/js-dev',//js-dev目录下
                     src:'**/*.js',//所有js文件
-                    dest: './js'//输出到此目录下
+                    dest: './libs/js'//输出到此目录下
                 }]
             }
 		},
