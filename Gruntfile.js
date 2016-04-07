@@ -6,7 +6,7 @@ module.exports=function(grunt){
 		uglify:{
 			options: {
                 mangle: {
-                  except: ['require']
+                  except: ['require','utils','seajs']
                 },
                 banner: '/*! 作者:阿伟 */\n'+
                         '/*! git:https://github.com/328080339/JsLibs.git */\n'+
