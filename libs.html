@@ -3,47 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            font-family: 'Microsoft YaHei','SimHei',sans-serif;
-        }
-        .title{
-            margin-bottom: 10px;
-            font-size: 30px;
-            display: block;
-        }
-        .module{
-            background-color:darkgray;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .tip{
-            color:crimson;
-            margin-bottom: 10px;
-        }
-        .none{
-            display: none;
-        }
-        .btn{
-            padding: 10px 20px;
-            background-color:aliceblue;
-            border-radius: 10px;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .autoPage{
-            display: inline-block;
-            width: 200px;
-            height: 300px;
-            background-color:blanchedalmond;
-            margin-right: 10px;
-            overflow: hidden;
-            overflow-y: auto;
-        }
-    </style>
+    <title>阿伟js插件集</title>
+    <meta name="description" content="js插件集">
+    <meta name="keywords" content="阿伟,JsLibs,js插件,seajs,seajs插件,js常用插件,校验插件,分页插件">
+    <link rel="stylesheet" href="libs.css">
 </head>
 <body>
+    <section class="page-header">
+      <div style="position:relative;z-index: 9999999999"></div><h1 class="project-name">Jslibs</h1>
+      <h2 class="project-tagline">要来就来一包！一包五颜六色的js插件(大部分为seajs的),满足前端开发的各种需求。有校验插件，分页插件，ajax插件，弹窗插件等等。使用方法和说明待更新。。</h2>
+      <a href="https://github.com/328080339/JsLibs" class="btn">View on GitHub</a>
+      <a href="https://github.com/328080339/JsLibs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/328080339/JsLibs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+    <section class="main-content">
     <div class="module">
         <a href="https://github.com/seajs/seajs/issues/266" class="title">sea</a>
     </div>
@@ -126,7 +99,7 @@
             <img src="" alt="" height="100" width="100">
             <img src="" alt="" height="100" width="100">
         </div>
-        <label for="seajs_uploadImgs_subBtn" class="btn">选择图片</label>
+        <label for="seajs_uploadImgs_subBtn" class="upbtn">选择图片</label>
         <input type="file" accept="image/gif,image/jpeg,image/png,image/jpg" name="file" imgTo="i" id="seajs_uploadImgs_subBtn" class="none">
     </div>
     <div class="module">
@@ -172,16 +145,29 @@
             </tr>
         </thead>
         <tbody>
-                                        
-        </tbody>
-    </table>
-    </div>
-    <div class="module">
-        <a href="https://github.com/328080339/JsLibs/wiki/seajs-calendar.js(%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8)" class="title" name="seajs-calendar">seajs-calendar</a>
-        <input type="text" class="calendarIpt" placeholder="请选择生日">
-        <input type="text" class="calendarIpt" placeholder="请选择生日">
-        <input type="text" class="calendarIpt" placeholder="请选择生日">
-    </div>
+                                            
+            </tbody>
+        </table>
+        </div>
+        <div class="module">
+            <a href="https://github.com/328080339/JsLibs/wiki/seajs-calendar.js(%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8)" class="title" name="seajs-calendar">seajs-calendar</a>
+            <input type="text" class="calendarIpt" placeholder="请选择生日">
+            <input type="text" class="calendarIpt" placeholder="请选择生日">
+            <input type="text" class="calendarIpt" placeholder="请选择生日">
+        </div>
+        <footer class="site-footer">
+            <h3>推荐使用<a href="https://www.npmjs.com/package/sealoader">sealoader</a>管理您的seajs插件</h3>
+            <h3>觉得好用就打个赏吧^.^</h3>
+            <img src="imgs/zfb.png" class="code-img">
+            <img src="imgs/wx.png" class="code-img">
+            <h3>交流反馈:</h3>
+            <p>
+                QQ群:515660304 <br>
+                Issues: <a href="https://github.com/328080339/JsLibs/issues">issues</a>
+            </p>
+        </footer>
+    </section>
+
     <script src="/libs/js/sea.js" id="seajsnode"></script>
     <script>
         var assetsUrl="http://awei.oss-cn-shenzhen.aliyuncs.com/";
