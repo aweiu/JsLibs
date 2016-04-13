@@ -45,14 +45,8 @@ define(function (require, exports, module) {
     };
     exports.showWaitting=true;
     var creathttp = function () {
-        if(exports.showWaitting){
-            waiting.show();
-        }
-        if (window.XMLHttpRequest) {
-            return new XMLHttpRequest();
-        } else {
-            return new ActiveXObject("Microsoft.XMLHTTP");
-        }
+        if(exports.showWaitting)waiting.show();
+        return (window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP"));
     };
     exports.get = function (url,onSuccess,onError) {
         if (url.substring(0, 1) == "/") {
