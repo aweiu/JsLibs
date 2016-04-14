@@ -85,7 +85,7 @@ define(function (require, exports, module) {
     exports.show = function () {
         exports.hide();
         if (waiting_bg != null) {
-            waiting_wrap.style.behavior = "url("+assetsUrl+"'htc/PIE.htc')";
+            waiting_wrap.style.behavior = "url("+assetsUrl+"htc/PIE.htc)";
             waiting_bg.style.display = "table";
             document.body.appendChild(waiting_bg);
             scrollCtrl.dis();
@@ -179,7 +179,7 @@ define(function (require, exports, module) {
             if (config.afterShow)config.afterShow(wrap_content);
             if (config.autoHide)autoHide();
             if (typeof(myPlaceHolder) != "undefined")myPlaceHolder.main(wrap_content);
-            waiting_wrap.style.behavior = "url("+assetsUrl+"'htc/PIE.htc')";
+            waiting_wrap.style.behavior = "url("+assetsUrl+"htc/PIE.htc)";
             fixModal.main();
             window.addEventListener("resize", fixModal.main);
             if(hideOnClickOut)hideOnClickOut.enable();
