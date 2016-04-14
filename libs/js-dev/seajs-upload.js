@@ -90,7 +90,7 @@ define(function (require, exports, module) {
                 waiting_bg.style.cssText = "position:absolute;background-color: rgba(0, 0, 0, .5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);z-index:99999999999;";
                 var td = document.createElement("td");
                 td.style.cssText = "color:white;text-align:center;vertical-align: middle;";
-                td.innerHTML = "<img src='"+assetsUrl+"/imgs/seajs-uploadImgs-loading.gif'/>";
+                td.innerHTML = "<img src='"+assetsUrl+"imgs/seajs-uploadImgs-loading.gif'/>";
                 waiting_bg.appendChild(td);
                 var mySuperWrapper=createWrapper(this.parentNode);
                 mySuperWrapper.appendChild(waiting_bg);

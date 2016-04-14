@@ -187,7 +187,7 @@ define(function (require, exports, module) {
                     loadStyle(waiting_bg,config.loadingStyle);
                     var td = document.createElement("td");
                     td.style.cssText = "color:white;text-align:center;vertical-align: middle;";
-                    td.innerHTML = "<img src='"+assetsUrl+"/imgs/seajs-uploadImgs-loading.gif'/>";
+                    td.innerHTML = "<img src='"+assetsUrl+"imgs/seajs-uploadImgs-loading.gif'/>";
                     waiting_bg.appendChild(td);
                     var mySuperWrapper=createWrapper(this.parentNode);
                     mySuperWrapper.appendChild(waiting_bg);
