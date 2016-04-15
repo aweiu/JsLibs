@@ -108,8 +108,7 @@ define(function (require, exports, module) {
     HTMLFormElement.prototype.mySubmit=function(onlySubmit){
         if(onlySubmit){
             waiting.show();
-            this.submit();
-            return;
+            this.removeAttribute("actionName");
         }
         if(!this.subBtn){
             this.subBtn=document.createElement("button");
