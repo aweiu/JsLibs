@@ -17,15 +17,22 @@
 		border-radius: 100%;
 		position: absolute;
 		animation:circle 5s infinite linear;
+		-webkit-animation:circle 5s infinite linear;
 		z-index: 1;
 	}
 	.player.play .player-singer{
 		animation-play-state:running;
+		-webkit-animation-play-state:running;
 	}
 	.player.pause .player-singer{
-		animation-play-state:paused;		
+		animation-play-state:paused;
+		-webkit-animation-play-state:paused;		
 	}
 	@keyframes circle{
+		0%{transform:rotate(-360deg)}
+		100%{transform:rotate(0deg)}
+	}
+	@-webkit-keyframes circle{
 		0%{transform:rotate(-360deg)}
 		100%{transform:rotate(0deg)}
 	}
