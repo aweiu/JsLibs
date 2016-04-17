@@ -73,8 +73,8 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-less');
-	// grunt.registerTask('default', ['connect','watch']);
+	grunt.registerTask('default', ['connect','watch']);
     grunt.registerTask('less', 'less');
-    grunt.registerTask('default', 'uglify:one');
+    // grunt.registerTask('default', 'uglify:one');
     // grunt.registerTask('default', 'uglify:all');
 }
