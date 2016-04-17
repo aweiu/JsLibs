@@ -1,0 +1,102 @@
+<style type="text/css">
+	.player{
+		position: absolute;
+		top: 320px;
+		margin: auto;
+		left: 0;
+		right: 0;
+		width: 350px;
+		font-family: 'Microsoft YaHei','SimHei',sans-serif;
+	}
+	.player a{
+		color: white;
+	}
+	.player-singer{
+		height: 100px;
+		width: 100px;
+		border-radius: 100%;
+		position: absolute;
+		animation:circle 5s infinite linear;
+		z-index: 1;
+	}
+	.player.play .player-singer{
+		animation-play-state:running;
+	}
+	.player.pause .player-singer{
+		animation-play-state:paused;		
+	}
+	@keyframes circle{
+		0%{transform:rotate(-360deg)}
+		100%{transform:rotate(0deg)}
+	}
+	.player-ctrl{
+		background-image: url(player.png);
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 30px;
+		cursor: pointer;
+		z-index: 2;
+		left: 30px;
+	}
+	.player.pause .player-ctrl:hover{
+		background-position: 40px 0px;
+	}
+	.player.play .player-ctrl{
+		background-position: 0px 42px;
+	}
+	.player.play .player-ctrl:hover{
+		background-position: 40px 42px;
+	}
+	.player-info{
+		position: absolute;
+		left: 50px;
+		width: 300px;
+		background-color: rgb(0,139,139);
+		height: 100px;
+		top: 0;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+		color: white;
+		text-align: center;
+		line-height: 20px;
+	}
+	.player-info div:first-child{
+		margin-top: 10px;
+	}
+</style>
+<div class="player pause">
+	<img class="player-singer" src="xw.jpg"></img>
+	<div class="player-ctrl" id="playerCtrl"></div>
+	<div class="player-info">
+		<div>演员</div>
+		<div>原唱:薛之谦</div>
+		<div>演唱:<a href="http://weibo.com/u/1884882137" target="_Blank">徐薇</a></div>
+		<div>来自:<a href="http://www.ximalaya.com/7178199/sound/9663011" target="_Blank">喜马拉雅</a></div>
+	</div>
+</div>
+<script type="text/javascript">
+	try{
+		var au = new Audio("http://audio.xmcdn.com/group12/M09/91/ED/wKgDXFY3IjeylkeGACBHeBLOWbI195.m4a");
+		au.loop=true;
+		au.addEventListener("timeupdate", function () {
+		    localStorage.setItem("t",this.currentTime);
+		})
+		au.addEventListener('loadedmetadata', function () {  
+		    this.currentTime=localStorage.getItem("t");
+		});
+		var playerCtrl=document.getElementById("playerCtrl");
+		if(localStorage.getItem("s")=="play"){
+			au.play();
+			playerCtrl.parentNode.className="player play";
+		}
+		playerCtrl.addEventListener("click",function(){
+			var tmp=au.paused?"play":"pause";
+			eval("au."+tmp+"()");
+			this.parentNode.className="player "+tmp;
+			localStorage.setItem("s",tmp);
+		})
+	}catch(e){
+		alert("实在是懒得让播放器再兼容低版本IE了,但本弹窗是写在global.html中的,说明singlePage在低版本的浏览器中仍然会运行全局静态资源,只不过不再支持单页应用了，页面会进行正常的跳转");
+	}
+</script>

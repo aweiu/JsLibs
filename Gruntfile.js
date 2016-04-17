@@ -1,6 +1,6 @@
 module.exports=function(grunt){
     //单独压缩的js文件名
-    var js="seajs-autoPage";
+    var js="singlePage";
 	grunt.initConfig({
 		pkg:grunt.file.readJSON("package.json"),
 		uglify:{
@@ -16,7 +16,7 @@ module.exports=function(grunt){
             //单个js压缩
             one: {
                 src: "./libs/js-dev/"+js+".js",
-                dest: "../libs/js/"+js+".js"
+                dest: "./libs/js/"+js+".js"
             },
             //js-tmp目录下所有的
             all:{
@@ -65,10 +65,6 @@ module.exports=function(grunt){
                   'css/*.css',
                   'js/*.js'
                 ]
-            },
-            js:{
-                files:'./js-dev/*.js',
-                tasks:'uglify:all'
             }
         }
     });
@@ -79,5 +75,6 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-less');
 	// grunt.registerTask('default', ['connect','watch']);
     grunt.registerTask('less', 'less');
-    grunt.registerTask('default', 'uglify:all');
+    grunt.registerTask('default', 'uglify:one');
+    // grunt.registerTask('default', 'uglify:all');
 }
