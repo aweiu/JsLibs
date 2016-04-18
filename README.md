@@ -3,9 +3,9 @@
 # 演示地址
   http://awei.oss-cn-shenzhen.aliyuncs.com/libs.html
 # 文档
-  https://github.com/328080339/JsLibs/wiki
+  https://github.com/awei-yu/JsLibs/wiki
 # 交流反馈
-  https://github.com/328080339/JsLibs/issues <br>
+  https://github.com/awei-yu/JsLibs/issues <br>
   QQ群:515660304
 # 推荐使用sealoader管理您的seajs插件
   https://www.npmjs.com/package/sealoader

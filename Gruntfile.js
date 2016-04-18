@@ -9,7 +9,7 @@ module.exports=function(grunt){
                   except: ['require','utils','seajs']
                 },
                 banner: '/*! 作者:阿伟 */\n'+
-                        '/*! git:https://github.com/328080339/JsLibs.git */\n'+
+                        '/*! git:https://github.com/awei-yu/JsLibs.git */\n'+
                         '/*! 推荐sealoader模块加载器:https://www.npmjs.com/package/sealoader */\n'+
                         '/*! 最后修改于 <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
@@ -73,8 +73,8 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.registerTask('default', ['connect','watch']);
+	// grunt.registerTask('default', ['connect','watch']);
     grunt.registerTask('less', 'less');
     // grunt.registerTask('default', 'uglify:one');
-    // grunt.registerTask('default', 'uglify:all');
+    grunt.registerTask('default', 'uglify:all');
 }

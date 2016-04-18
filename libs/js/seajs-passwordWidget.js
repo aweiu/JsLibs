@@ -1,5 +1,5 @@
 /*! 作者:阿伟 */
-/*! git:https://github.com/328080339/JsLibs.git */
+/*! git:https://github.com/awei-yu/JsLibs.git */
 /*! 推荐sealoader模块加载器:https://www.npmjs.com/package/sealoader */
-/*! 最后修改于 2016-04-06 15:39:04 */
+/*! 最后修改于 2016-04-18 11:35:42 */
 define(function(require,a,b){function c(){e=utils.$id("password_widget_wrap"),f=utils.$id("password_widget_passwords").getElementsByTagName("div"),utils.$id("password_widget_keyboard").addEventListener("touchend",function(b){b.preventDefault();var c=b.srcElement||b.target;"BUTTON"!=c.tagName&&"password-widget-delKey"!=c.className||("password-widget-delKey"!=c.className?h.length<6&&(f[h.length].innerHTML="●",h+=c.innerHTML):h.length>0&&(f[h.length-1].innerHTML="",h=h.substring(0,h.length-1)),6==h.length&&(a.hide(),a.onFinish&&a.onFinish(h)))}),utils.$id("password_widget_close").addEventListener("click",function(){a.hide()}),g=!0}var d=b.uri;d=d.substring(0,d.lastIndexOf("/js/"))+"/";var e,f,utils=require("seajs-utils"),g=!1,h="",i=function(a){utils.use([d+"css/seajs-passwordWidget.css",d+"html/seajs-passwordWidget.html"],function(){g||c(),a&&a()})},j=function(){h="";for(var a=0,b=f.length;b>a;a++)f[a].innerHTML=""};a.show=function(b){i(function(){e.style.display="block",j(),b&&(a.onFinish=b)})},a.hide=function(){i(function(){e.style.display="none"})},a.setTitle=function(a,b){0!=b&&1!=b||i(function(){utils.$id("password_widget_title"+b).innerHTML=a})},a.setRegetPasswordUrl=function(a){i(function(){utils.$id("password_widget_forget").href=a})},a.newInstance=function(){return a}});
