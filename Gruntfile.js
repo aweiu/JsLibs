@@ -9,7 +9,7 @@ module.exports=function(grunt){
                   except: ['require','utils','seajs']
                 },
                 banner: '/*! 作者:阿伟 */\n'+
-                        '/*! git:https://github.com/awei-yu/JsLibs.git */\n'+
+                        '/*! git:https://github.com/aweiu/JsLibs.git */\n'+
                         '/*! 推荐sealoader模块加载器:https://www.npmjs.com/package/sealoader */\n'+
                         '/*! 最后修改于 <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
