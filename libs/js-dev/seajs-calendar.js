@@ -28,6 +28,7 @@ define(function (require, exports, module) {
             [assetsUrl+"css/calendar.css","calendar"]
         ],function(){
             if(ipts.tagName)ipts=[ipts];
+            var onSelected=config.onSelected;
             for(var i= 0,l=ipts.length;i<l;i++){
                 var obj=ipts[i];
                 var wrapper=createWrapper(obj.parentNode),
@@ -55,7 +56,6 @@ define(function (require, exports, module) {
                     dw=getDw(os,obj);
                 config=config||{};
                 config.trigger=$(obj);
-                var onSelected=config.onSelected;
                 config.onSelected=function(view, date, value){
                     if(obj.onIpt)obj.onIpt();
                     if(onSelected)onSelected.apply(null,arguments);
