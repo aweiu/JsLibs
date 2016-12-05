@@ -1,6 +1,6 @@
 module.exports=function(grunt){
     //单独压缩的js文件名
-    var js="singlePage";
+    var js="fixJsForIE8";
 	grunt.initConfig({
 		pkg:grunt.file.readJSON("package.json"),
 		uglify:{
@@ -75,6 +75,6 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-less');
 	// grunt.registerTask('default', ['connect','watch']);
     grunt.registerTask('less', 'less');
-    // grunt.registerTask('default', 'uglify:one');
-    grunt.registerTask('default', 'uglify:all');
+    grunt.registerTask('default', 'uglify:one');
+    // grunt.registerTask('default', 'uglify:all');
 }
