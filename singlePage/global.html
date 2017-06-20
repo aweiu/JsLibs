@@ -99,7 +99,7 @@
 		}
 		playerCtrl.addEventListener("click",function(){
 			var tmp=au.paused?"play":"pause";
-			eval("au."+tmp+"()");
+			au.paused ? au.play() : au.pause()
 			this.parentNode.className="player "+tmp;
 			localStorage.setItem("s",tmp);
 		})

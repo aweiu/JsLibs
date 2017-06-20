@@ -61,7 +61,6 @@ var scripts=document.scripts,
 			http.open("get",(assetUrl.substr(0,1)=="/"?"":"/")+assetUrl, true);
 		    http.setRequestHeader("Content-type", "text/html;charset=utf-8");
 		    http.setRequestHeader("X-Requested-With","httpRequest");
-		    http.setRequestHeader("If-Modified-Since","0");
 		    http.send();
     	}
     },
@@ -83,7 +82,6 @@ var scripts=document.scripts,
 		getAsset(function(rs){
 			if(history.replaceState){
 				removeScripts(true);
-				var html=document.documentElement.outerHTML;
 				var isrc=window.location.href;
 				isrc+=(isrc.indexOf("?")==-1?"?":"&")+"singlePage="+new Date().getTime();
 				var onload=function(ifr){
@@ -98,8 +96,14 @@ var scripts=document.scripts,
 					}
 				}
 				var ifr="<iframe src='"+isrc+"' width='100%' scrolling='no' frameborder='0' onload='("+onload+")(this)'></iframe>";
-				html=html.replace(getSubstr(html,"body"),"\n"+ifr+"\n"+rs);
-				document.write(html);
+				document.body.innerHTML = ifr+"\n"+rs
+				var scripts = document.body.getElementsByTagName('script')
+				for (var i = 0; i < scripts.length; i++) {
+					var script = document.createElement('script');
+					script.innerHTML = scripts[0].innerHTML;
+					document.body.removeChild(scripts[0]);
+					document.body.appendChild(script);
+				}
 			}else{
 				removeScripts();
 				html=document.documentElement.outerHTML;
@@ -110,5 +114,4 @@ var scripts=document.scripts,
 			
 		});
 	}
-
 })();
