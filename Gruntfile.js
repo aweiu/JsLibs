@@ -10,7 +10,7 @@ module.exports=function(grunt){
                 },
                 banner: '/*! 作者:阿伟 */\n'+
                         '/*! git:https://github.com/aweiu/JsLibs.git */\n'+
-                        '/*! 推荐sealoader模块加载器:https://www.npmjs.com/package/sealoader */\n'+
+                        '/*! 推荐sealoader模块加载器:https://aweiu.com/documents/sealoader/ */\n'+
                         '/*! 最后修改于 <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
             //单个js压缩

@@ -19,4 +19,4 @@ QQ 群:515660304
 
 # 推荐使用 sealoader 管理您的 seajs 插件
 
-https://www.npmjs.com/package/sealoader
+https://aweiu.com/documents/sealoader/
